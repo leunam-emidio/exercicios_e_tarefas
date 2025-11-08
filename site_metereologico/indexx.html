@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metereologico</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <main>
+        <form action="">
+            <label for="">Cidade</label>
+            <input type="text" id="cidade">
+            <input type="button" id="botao">
+        </form>
+        <div id="result">
+
+        </div>
+        <div id="process">
+
+        </div>
+    </main>
+
+    <script>
+        document.querySelector('#botao').addEventListener('onclick', () => {
+            const cidade = document.querySelector('#cidade').value.trim()
+            botao.disabled = 'true'
+
+            if(!cidade){
+                alert('prencha a cidade!')
+            }else{
+                
+                try{
+                    
+                    const url = ``
+                    const resposta = await fetch(url)
+                    if(!resposta.ok) throw new Error('Cidade não encontrada')
+                    const dados = await resposta.json()
+                    mostrarResult(dados)
+                }catch(err){
+                    mostrarErro(err.message)
+                }finally{
+                    mostrarProcess(false)
+                }
+            }
+
+            })
+
+            function mostrarResult(d){
+
+            }
+    </script>
+</body>
+</html>

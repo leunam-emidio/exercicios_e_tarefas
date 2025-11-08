@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex8-Cadastro de Usuários</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+            position: absolute;
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form{
+            background-color: burlywood;
+            width: 400px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        input{
+            padding: 4px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body style="background-color: burlywood;">
+    
+    <div>
+        <form action="">
+            <label for="">Nome:</label>
+            <input type="text" id="nome">
+            <label for="">Número:</label>
+            <input type="number" id="numero">
+            <label for="">Cidade:</label>
+            <input type="text" id="cidade">
+            <input type="button" value="Salvar" onclick="exibir()" style="background-color: chocolate; margin-top: 10px;" >
+        </form>
+    </div>
+
+    <script>
+        var cadastros  = []
+
+        function exibir(){
+            let nome = document.querySelector('#nome').value
+            let numero = document.querySelector('#numero').value
+            let cidade = document.querySelector('#cidade').value
+            console.log(nome, numero, cidade)
+
+            let Cadastrar = function(nome, numero, cidade){
+                return{
+                    nome,
+                    numero,
+                    cidade
+                }
+            }
+
+            let cadastro = Cadastrar(nome, numero, cidade)
+            cadastros.push(cadastro)
+
+            console.log(cadastros)
+            console.log('fim')
+        }
+    </script>
+</body>
+</html>

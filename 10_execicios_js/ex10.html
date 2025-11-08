@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            background-color: rgba(167, 166, 166, 0.596);
+            position: absolute;
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        form{
+            background-color: rgba(255, 127, 80, 0.767);
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        input{
+            width: 290px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            padding: 4px 0px 4px 6px;
+        }
+
+        h1{
+            align-self: center;
+            color: darkviolet;
+        }
+
+        #botao{
+            background-color: darkviolet;
+            color: white;
+            width: 295px;
+            margin-top: 10px;
+        }
+
+        a{
+            align-self: center;
+            color: darkviolet;
+            margin: 0PX;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form action="" id="formulario">
+            <h1>Login</h1>
+            <label for="" >Email</label>
+            <input type="email" id="email">
+            <label for="" >Senha</label>
+            <input type="password" id="senha">
+            <input type="button" value="Entrar" id="botao" onclick="entrar()">
+            <a href="#">Esqueceste a tua senha?</a>
+        </form>
+    </div>
+        
+    <script>
+        function entrar(){
+            let formulario = document.querySelector('#formulario')
+            let email = document.querySelector('#email').value
+            let senha = document.querySelector('#senha').value
+            var proxId = 0
+
+            
+
+            let dados = {
+                email: email,
+                senha: senha
+            }
+
+            console.log(dados)
+
+            if(!email || !senha){
+                alert('Prencha todos os campos!')
+                
+            }else{
+                let id = localStorage.getItem('id')
+                if(id === null){
+                    localStorage.setItem('id', 0)
+                    proxId = 1
+                    localStorage.setItem(proxId, JSON.stringify(dados))
+                    localStorage.setItem('id', proxId)
+                    formulario.reset()
+                    alert('Login realizado com sucesso!')
+                }else{
+                    proxId = parseInt(id) + 1
+                
+                    localStorage.setItem(proxId, JSON.stringify(dados))
+                    localStorage.setItem('id', proxId)
+                    formulario.reset()
+                    alert('Login realizado com sucesso!')
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2-Calculadora de IMC</title>
+</head>
+<body style="background-color: burlywood;">
+    <script>
+        let nome = prompt('Digite o nome: ')
+        let peso = prompt('Digite o peso: ')
+        let altura = prompt('Digite a altura: ')
+
+        if(peso < 18.5){
+            document.write('Abaixo do peso.')
+        }else if(peso >= 18.5 && peso <= 24.9){
+            document.write('Normal.')
+        }else if(peso >= 25 && peso <= 29.9){
+            document.write('Sobrepeso.')
+        }else{
+            document.write('Obesidade.')
+        }
+    </script>
+</body>
+</html>

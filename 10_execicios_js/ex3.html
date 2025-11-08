@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3-Ordenação de Números</title>
+</head>
+<body style="background-color: burlywood;">
+    <script>
+        let numeros = []
+        for(let i = 0; i<5; i++){
+            let n = prompt('Digite um número: ')
+            numeros.push(n)
+        }
+        let oCrescente = numeros.sort()
+        document.write('Ordem Crescente: '+oCrescente)
+        document.write('<br>O maior número: '+oCrescente.at(-1)+'<br>')
+        document.write('O menor número: '+oCrescente[0]+'<br>')
+        let oDecrescente = numeros.sort().reverse()
+        document.write('Ordem Decrescente: '+oDecrescente)
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9-Jogo de Adivinhação</title>
+</head>
+<body style="background-color: burlywood;">
+    <script>
+        var sorteio = Math.floor(Math.random()*20)
+        console.log(sorteio)
+        for(;;){  
+
+            var num = parseInt(prompt('Digite o valor:'))
+
+            if(num == sorteio){
+                alert('Parabens! Voce Acertou.')
+                break
+            }else if(num < sorteio){
+                alert('Digite um número maior')
+            }else{
+                alert('Digite um número menor')
+            }
+        }
+
+    </script>
+</body>
+</html>

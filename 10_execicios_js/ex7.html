@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex7-Simulador de Caixa Eletrônico</title>
+</head>
+<body style="background-color: burlywood;">
+    <script>
+        let valor = parseInt(prompt('Digite o valor multiplo de 10:'))
+        var r = valor
+
+        if(r>=100) {
+            console.log('a')
+            let n = Math.floor(r/100)
+            r = r - (n*100)
+            document.write(`São necessaria de ${n} notas de 100 <br>`)
+            console.log(r)
+            
+        }
+
+        if(r >= 50) {
+            console.log('b')
+            let n = Math.floor(r/50)
+            r = r - (n*50)
+            document.write(`São necessaria de ${n} notas de 50 <br>`)
+            console.log(r)
+        }
+
+        if(r >= 20) {
+            console.log('c')
+            let n = Math.floor(r/20)
+            r = r - (n*20)
+            document.write(`São necessaria de ${n} notas de 20 <br>`)
+            console.log(r)
+        }        
+
+        if(r >= 10){
+            console.log('d')
+            let n = Math.floor(r/10)
+            r = r - (n*10)
+            document.write(`São necessaria de ${n} notas de 10 <br>`)
+            console.log(r)
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5-Contador Inteligente</title>
+</head>
+<body style="background-color: burlywood;">
+    <script>
+        let inicio = Number(prompt('Digite o número inicial:'))
+        let fim = Number(prompt('Digite o número final:'))
+        document.write(`O intervalo digitado foi ${inicio} e ${fim} <br>`)
+        for(let i = inicio+1; i < fim; i++){
+            if(i%2==0 && i != 0){
+                document.write(i+' é par <br>')
+            }else{
+                document.write(i+' é impar <br>')
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            position: absolute;
+            background-color: rgba(0, 128, 0, 0.637);
+            padding: 10px 10px 20px 10px;
+            border-radius: 0 10px;
+            color: rgb(1, 43, 1);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 600px;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            align-self: center;
+        }
+
+        label {
+            font-weight: bolder;
+            font-size: larger;
+        }
+
+        #divDescr {
+            display: flex;
+        }
+
+        #titulo {
+            width: 504px;
+            padding: 4px 0 4px 8px;
+            border: none;
+            outline: none;
+            border-radius: 0 10px;
+        }
+
+        textarea {
+            width: 470px;
+            height: 70px;
+            margin-left: 10px;
+            border-radius: 0 10px;
+            border: none;
+            outline: none;
+            padding: 4px 8px 4px 8px;
+        }
+
+        #btn {
+            background-color: rgba(1, 43, 1, 0.459);
+            border: none;
+            outline: none;
+            padding: 6px;
+            width: 100px;
+            border-radius: 0 10px;
+            display: flex;
+            flex-direction: row;
+            align-self: self-end;
+            margin-right: 24px;
+            color: white;
+        }
+
+        #result {
+            height: 250px;
+            background-color: white;
+            padding: 6px;
+            width: 570px;
+            border-radius: 0 10px;
+            color: gray;
+        }
+
+        .botao{
+            width: 100px;
+            height: 30px;
+            border: none;
+            outline: none;
+            background-color: rgba(1, 43, 1, 0.459);
+            padding: 6px;
+            border-radius: 0 10px;
+            color: white;
+        }
+
+
+    </style>
+</head>
+
+<body onload="carregarListaTarefas()">
+    <div id="container">
+        <form action="" id="formulario">
+            <h1>Lista de Tarefas</h1>
+            <div>
+                <label for="">Titulo: </label>
+                <input type="text" name="titulo" id="titulo" placeholder="escrava o titulo">
+            </div>
+            <div id="divDescr">
+                <label for="">Descrição: </label>
+                <textarea name="descricao" id="descricao" rows="10" placeholder="descreva aqui"></textarea>
+            </div>
+            <input type="button" id="btn" value="Salvar" onclick="adicionarTarefa()">
+            <div id="result">
+                sem nenhuma tarefa
+            </div>
+        </form>
+    </div>
+
+    <script>
+        class Bd {
+
+            constructor() {
+                let id = localStorage.getItem('id')
+                if (id === null) {
+                    localStorage.setItem('id', 0)
+                }
+            }
+
+            getProximoId() {
+                let proximoId = localStorage.getItem('id')
+                return parseInt(proximoId) + 1
+            }
+
+            gravar(t) {
+                let id = this.getProximoId()
+
+                localStorage.setItem(id, JSON.stringify(t))
+                localStorage.setItem('id', id)
+            }
+
+            recuperarTodasTarefas() {
+                //array de tarefas
+                let tarefas = Array()
+
+                let id = localStorage.getItem('id')
+
+                //Recupera todas as tarefas salvas em localStorage
+                for (let i = 1; i <= id; i++) {
+                    //Recuperar as tarefas
+                    let tarefa = JSON.parse(localStorage.getItem(i))
+
+                    //Verificar se existe um indice que foi pulado/removido
+                    if (tarefa === null) {
+                        continue
+                    }
+                    tarefa.id = i
+                    tarefas.push(tarefa)
+                }
+                return tarefas
+            }
+
+            removerTarefa(id) {
+                localStorage.removeItem(id)
+            }
+        }
+
+        let bd = new Bd()
+
+        function adicionarTarefa() {
+            let titulo = document.querySelector('#titulo').value
+            let descricao = document.querySelector('#descricao').value
+
+            if (!titulo) {
+                alert('preencha o titulo')
+            } else {
+                formulario.reset()
+                let tarefa = {
+                    titulo,
+                    descricao
+                }
+
+                bd.gravar(tarefa)
+                carregarListaTarefas()
+            }
+        }
+
+        function carregarListaTarefas() {
+
+            //
+            let tarefas = bd.recuperarTodasTarefas()
+
+            //Selecionando o elemento tbody da tabela
+            let result = document.querySelector('#result')
+            result.innerHTML = '<table id="tabela"></table>'
+
+            //Percorrer o array despesas, listando cada despesa de forma dinâmica  
+            tarefas.forEach(t => {
+
+                //console.log(d)
+
+                //Criando a linha (tr)
+                let linha = tabela.insertRow()
+
+                //Criar as colunas (td)
+                linha.insertCell(0).innerHTML = t.titulo
+
+                //criar o botao ver descricao
+                let btn = document.createElement("button")
+                btn.innerText = 'Descrição'
+                btn.className = 'botao'
+                btn.onclick = function () {
+                    
+                }
+                linha.insertCell(1).append(btn)
+
+                //criar o botao de exclusão
+                let btnR = document.createElement("button")
+                btnR.innerText = 'Remover'
+                btnR.className = 'botao'
+                btnR.id = `id_despesa_${t.id}`
+                btnR.onclick = function () {
+                    //remover a tarefa
+                    let id = this.id.replace('id_despesa_', '')
+
+                    bd.removerTarefa(id)
+                    window.location.reload()
+                }
+                linha.insertCell(2).append(btnR)
+
+            })
+        }
+
+    </script>
+</body>
+
+</html>
