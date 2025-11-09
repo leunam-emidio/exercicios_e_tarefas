@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <img src="icons/logo.jpg" alt="logo">
+    </header>
+    <main>
+        <form action="post" autocomplete="on">
+            <h1>Cadastrar-se</h1>
+            <p>Já possui uma conta? <a href="#">Entrar</a></p>
+            <div>
+                <label for="inome"><img src="icons/person.svg" alt="nome"></label>
+                <input type="text" name="Nome" id="inome" placeholder="nome" required>
+            </div>
+            <div>
+                <label for="iemail"><img src="icons/mail.svg" alt="email"></label>
+                <input type="email" name="email" id="iemail" placeholder="email" required>
+            </div>
+            <div>
+                <label for="isenha"><img src="icons/vpn_key.svg" alt="senha"></label>
+                <input type="password" name="senha" id="isenha" placeholder="senha" required minlength="8">
+            </div>
+            <div>
+                <input type="submit" name="submit" value="Cadastrar-se" id="isubmit">
+            </div>
+            <section>
+                <p>Ou cadastra-se com</p>
+
+                <div>
+                    <button><img src="icons/logo_google.png" alt="google"></button>
+                    <button><img src="icons/logo_facebook.png" alt="facebook"></button>
+                    <button><img src="icons/logo_apple.png" alt="apple"></button>
+                </div>
+
+                <p>Ao se cadastrar, você aceitar os nossos <a href="#">Termos de Uso</a> e a nossa <a href="#">Política de privacidade</a></p>
+            </section>
+        </form>
+    </main>
+</body>
+</html>
