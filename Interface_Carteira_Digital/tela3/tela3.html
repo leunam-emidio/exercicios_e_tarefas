@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <header>
+        <img src="icons/logo.jpg" alt="logo">
+    </header>
+    <main>
+        <form action="post" autocomplete="on">
+            <h1>Login</h1>
+            <div>
+                <label for="iemail"><img src="icons/mail.svg" alt="email"></label>
+                <input type="email" name="email" id="iemail" placeholder="email" required>
+            </div>
+            <div>
+                <label for="isenha"><img src="icons/vpn_key.svg" alt="senha"></label>
+                <input type="password" name="senha" id="isenha" placeholder="senha" required minlength="8">
+            </div>
+            <div>
+                <input type="submit" name="submit" value="Entrar" id="isubmit">
+            </div>
+            <p>Já possui uma conta? <a href="#">Entrar</a></p>
+        </form>
+    </main>
+</body>
+</html>
