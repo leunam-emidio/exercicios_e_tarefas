@@ -6,8 +6,45 @@
     <title>ex83</title>
 </head>
 <body>
+    <input id="num" type="text" oninput="this.value = this.value.replace(/[^0-9]/g,'')" placeholder="Só números">
+
+    <input id="texto" type="text" oninput="this.value = this.value.replace(/[^a-zA-Z]/g,'')" placeholder="Só letras">
+
+    <input id="pares" type="text" oninput="
+    this.value = this.value.replace(/[^0-9]/g,'')
+    if (this.value !== '' && parseInt(this.value) % 2 !== 0) this.value = this.value.slice(0,-1)
+" placeholder="Só pares">
+
+    <input id="vogais" type="text" oninput="this.value = this.value.replace(/[^aeiouAEIOU]/g,'')" placeholder="Só vogais">
+
+    <input id="primos" type="text" oninput="this.value = this.value.replace(/[^0-9]/g,'')
+     let n = parseInt(this.value) 
+     if (this.value !== '' && !isPrimo(n)) this.value = this.value.slice(0,-1)" placeholder="Só primos">
+   
+   <input id="lista" type="text" oninput="validarLista(this)" placeholder="Só valores da lista">
+
+
     <script>
-        
+
+        function isPrimo(n) {
+            if (n < 2) return false
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i === 0) return false
+            }
+            return true;
+        }
+
+        let listaPermitida = ["joao", "maria", "pedro"]
+
+        function validarLista(campo) {
+            let v = campo.value.toLowerCase()
+
+            if (!listaPermitida.includes(v)) {
+                campo.style.color = 'red'
+            } else {
+                campo.style.color = 'green'
+            }
+        }
     </script>
 </body>
 </html>

@@ -1,13 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex96</title>
+    <style>
+        #saida {
+            font-size: 22px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+    </style>
 </head>
 <body>
+
+    <h3>Digite o texto (use /* ... */ para comentários vermelhos):</h3>
+
+    <textarea id="entrada" rows="6" cols="50" oninput="destacarComentario()"></textarea>
+
+    <div id="saida"></div>
+
     <script>
-        
+        function destacarComentario() {
+            let texto = document.getElementById("entrada").value
+
+            // Expressão regular que encontra /* ... */
+            let textoFormatado = texto.replace(/\/\*([\s\S]*?)\*\//g,'<span style="color:red;">/*$1*/</span>')
+
+            document.getElementById("saida").innerHTML = textoFormatado
+        }
     </script>
 </body>
 </html>

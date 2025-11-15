@@ -7,9 +7,25 @@
 </head>
 <body>
     <script>
-        function soma(n1, n2){
-            
+        function somar(a, b) {
+            while (b !== 0) {
+                let carry = a & b
+                a = a ^ b
+                b = carry << 1
+            }
+            return a
         }
+
+        function parOuImpar(n) {
+            return (n % 2 === 0) ? "par" : "ímpar"
+        }
+
+        let x = 12
+        let y = 5
+
+        let resultado = somar(x, y)
+        document.write("Resultado:", resultado+'<br>')
+        document.write("O resultado é:", parOuImpar(resultado))
     </script>
 </body>
 </html>

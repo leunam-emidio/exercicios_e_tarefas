@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex95</title>
+    <style>
+        body { font-family: Arial; font-size: 30px; padding: 20px; }
+    </style>
 </head>
 <body>
+
+    <h2>Hora atual:</h2>
+    <div id="relogio"></div>
+
     <script>
-        
+        function atualizarHora() {
+            let agora = new Date()
+            let horas = String(agora.getHours()).padStart(2, '0')
+            let minutos = String(agora.getMinutes()).padStart(2, '0')
+            let segundos = String(agora.getSeconds()).padStart(2, '0')
+
+            document.getElementById("relogio").innerHTML = horas + ":" + minutos + ":" + segundos
+        }
+
+        setInterval(atualizarHora, 1000)
+        atualizarHora()
     </script>
 </body>
 </html>

@@ -1,13 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ex84</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ex84</title>
 </head>
 <body>
-    <script>
-        
-    </script>
+
+<h3>Inserir nomes</h3>
+<input type="text" id="nome" placeholder="Digite um nome">
+<button onclick="adicionar()">Adicionar</button>
+<br><br>
+<select id="lista" multiple></select>
+<br><br>
+<button onclick="finalizar()">Finalizar</button>
+<p id="resultado1"></p>
+<p id="resultado2"></p>
+
+<script>
+    let nomes = []             
+    let contagem = {}
+
+    function adicionar() {
+        let nome = document.getElementById("nome").value.trim()
+        if (nome === "") return
+
+        let chave = nome.toLowerCase()
+
+        if (!contagem[chave]) {
+            contagem[chave] = 1
+        } else {
+            contagem[chave]++
+        }
+
+        nomes.push(chave)
+
+        atualizarListbox()
+
+        document.getElementById("nome").value = ""
+        document.getElementById("nome").focus()
+    }
+
+    function atualizarListbox() {
+        let lista = document.getElementById("lista")
+        lista.innerHTML = ""
+
+        for (let chave in contagem) {
+            let texto = chave + " (" + contagem[chave] + ")"
+            let option = document.createElement("option")
+            option.textContent = texto
+            lista.appendChild(option)
+        }
+    }
+
+    function finalizar() {
+
+        // 1 — Nome mais inserido consecutivamente
+        let maxNome = ""
+        let maxSeq = 0
+
+        let seqNome = ""
+        let seqCount = 0
+
+        for (let i = 0; i < nomes.length; i++) {
+            if (nomes[i] === seqNome) {
+                seqCount++
+            } else {
+                seqNome = nomes[i]
+                seqCount = 1
+            }
+
+            if (seqCount > maxSeq) {
+                maxSeq = seqCount
+                maxNome = seqNome
+            }
+        }
+
+        // 2 — Nome menos inserido (total)
+        let minNome = ""
+        let minValor = Infinity
+
+        for (let chave in contagem) {
+            if (contagem[chave] < minValor) {
+                minValor = contagem[chave]
+                minNome = chave
+            }
+        }
+
+        // mostrar resultados
+        document.getElementById("resultado1").innerText =
+            "1. Nome mais inserido consecutivamente: " + maxNome + " (" + maxSeq + " vezes seguidas)"
+
+        document.getElementById("resultado2").innerText =
+            "2. Nome menos inserido no total: " + minNome + " (" + minValor + " vez(es))"
+    }
+</script>
+
 </body>
 </html>
