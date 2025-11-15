@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body onresize="modouTamanho()">
+    <header>
+        <img src="img/logo.jpg" alt="logo">
+        <span id="burguer" class="material-symbols-outlined" onclick="clickMenu()">menu</span> 
+        <nav>
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">Transações</a></li>
+                <li><a href="#">Perfil</a></li>
+                <li><a href="#">Configurações</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+       oi
+    </main>
+
+    <script>
+        function modouTamanho(){
+            if(window.innerWidth >= 768){
+                itens.style.display = 'block'
+            }else{
+                itens.style.display = 'none'
+            }
+        }
+
+        function clickMenu(){
+              if(itens.style.display == 'block'){
+                itens.style.display = 'none'
+              }else{
+                itens.style.display = 'block'
+              }
+        }
+    </script>
+</body>
+</html>

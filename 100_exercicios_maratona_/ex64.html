@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex64</title>
+</head>
+<body>
+    <script>
+        let ganho = 0
+        for(q=0; q < 30; q++){
+            let nome = prompt('Nome:')
+            let dias = parseInt(prompt('N dias:'))
+            if(dias<15){
+                var conta = 54
+            }else if(dias == 15){
+                var conta = 53.60
+            }else{
+                var conta = 53
+            }
+
+            ganho+=conta
+            document.write(`${nome} tem uma conta de ${conta}<br>`)
+        }
+        document.write(`Ganho do hotel ${conta}<br>`)
+    </script>
+</body>
+</html>

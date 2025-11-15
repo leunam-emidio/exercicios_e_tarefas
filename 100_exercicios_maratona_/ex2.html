@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+<body>
+    <script>
+        let num = prompt('Digite 3 numeros separados por espaço:').split(' ')
+
+        console.log(num)
+        let soma = num.reduce((acumulador, valorAtual) => acumulador + Number(valorAtual), 0) // 0 é o valor inicial do acumulador 
+        document.write(`A media é ${soma/3}`)
+    </script>
+</body>
+</html>

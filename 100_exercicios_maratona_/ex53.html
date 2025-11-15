@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex53</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt('Numero inteiro:'))
+        let E = 1
+        for(let i = 1; i<=n; i++){
+            factorial = 1
+            for(let j= 1; j<=i; j++){
+                factorial *= j
+            }
+
+            let termo = 1/ factorial
+
+            E += termo
+        }
+        document.write(`E = ${E}`)
+    </script>
+</body>
+</html>

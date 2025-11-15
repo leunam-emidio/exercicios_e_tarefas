@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex88</title>
+</head>
+<body>
+    <input type="text" id="texto" oninput="tirarVogais()">
+    <script>
+        function tirarVogais(){
+            let texto = document.querySelector('#texto')
+
+            let vtexto = texto.value
+            let letras = vtexto.toLowerCase().split('')
+            for(i in letras){
+                if(letras[i] == 'a' || letras[i] == 'e' || letras[i] == 'i' || letras[i] == 'o' || letras[i] == 'u'){
+                    letras[i] = ''
+                }
+            }
+            letras = letras.join('')
+            texto.value = letras
+        }
+    </script>
+</body>
+</html>

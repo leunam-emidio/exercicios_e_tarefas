@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex68</title>
+</head>
+<body>
+    <script>
+        let frase = prompt('Frase:')
+        let palavra = prompt('Escolha uma palavra da frase:')
+
+        document.write(`Frase ${frase}<br>`)
+        if(frase.includes(palavra)){
+            let posicao = frase.indexOf(palavra)
+            document.write(`Posição ${posicao} - ${posicao+palavra.length}`)
+        }
+    </script>
+</body>
+</html>

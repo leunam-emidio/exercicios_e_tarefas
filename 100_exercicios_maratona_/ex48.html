@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex48</title>
+</head>
+<body>
+    <script>
+        let n = 3
+        let soma = 0
+        let termos = []
+        let i = 1
+        while(i<9){
+            let u = n**i
+            termos.push(u)
+            soma+=u
+
+            i++
+        }
+        document.write(`${termos}<br>Soma dos termos: ${soma}`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+|<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex21</title>
+</head>
+<body>
+    <script>
+        let nums = []
+        for(let i=0; i<20; i++){
+            let num = parseInt(prompt('Digite um nome:'))
+            if(num<0 ){
+                i--
+                alert('Digite somente numeros positivos!')
+                continue
+            }
+            nums.push(num)
+        }
+        console.log(nums)
+        let maior = 0
+
+        for(v of nums){
+            if(v>maior){
+                maior = v
+            }
+        }
+        document.write(`${maior} é o maior numero e ocupa a posição ${nums.indexOf(maior)}`)
+    </script>
+</body>
+</html>

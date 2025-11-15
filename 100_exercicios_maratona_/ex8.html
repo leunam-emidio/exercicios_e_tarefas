@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex8</title>
+</head>
+<body>
+    <script>
+    
+    for(let i = 1000; i<10000; i++){
+        let num = String(i)
+
+        let n1 = num.slice(0,2)
+        let n2 = num.slice(2,5)
+
+        let soma = Number(n1)+Number(n2)
+        let result = soma**2
+        if(result == i){
+            document.write(result+'<br>')
+        }
+    }
+    </script>
+</body>
+</html>

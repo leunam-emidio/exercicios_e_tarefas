@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex34</title>
+</head>
+<body>
+    <script>
+        let mdI = 0
+        let mdA = 0
+        let qI = 0
+        let qA = 0
+        for(i = 0; i<45; i++){
+            let idade = Math.floor(Math.random()*50)
+            let altura = (Math.random()*2)  
+
+            if(altura < 1.70){
+                mdI+=idade
+                qI++
+            }
+            if(idade > 20){
+                mdA+=altura
+                qA++
+            }
+        }
+
+        document.write(`A idade media é ${Math.floor(mdI/qI)} <br>`)
+        document.write(`A altura media é ${Math.floor(mdA/qA)}`)
+    </script>
+</body>
+</html>

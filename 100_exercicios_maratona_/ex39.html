@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex39</title>
+</head>
+<body>
+    <script>
+        let massa = parseFloat(prompt("Digite a massa inicial (em gramas):"))
+        let tempo = 0
+
+        while (massa >= 0.05) {
+            massa = massa / 2
+            tempo += 50
+        }
+
+        alert(`Tempo necessário: ${tempo} segundos`)
+
+    </script>
+</body>
+</html>

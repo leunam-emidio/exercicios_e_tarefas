@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex70</title>
+</head>
+<body>
+    <script>
+        let data = prompt('Data (dd/mm/aaaa)').split('/')
+        let dia = data[0]
+        let mes = data[1]
+        let ano = data[2]
+        
+        mes = mes[0] == 0 ? mes[1]: mes
+        
+        switch (mes) {
+            case '1':
+                mes = 'janeiro'
+                break;
+            case '2':
+                mes = 'fevereiro'
+                break;
+            case '3':
+                mes = 'março'
+                break;
+            case '4':
+                mes = 'abril'
+                break;
+            case '5':
+                mes = 'maio'
+                break;
+            case '6':
+                mes = 'junho'
+                break;
+            case '7':
+                mes = 'julho'
+                break;
+            case '8':
+                mes = 'agosto'
+                break;
+            case '9':
+                mes = 'setembro'
+                break;
+            case '10':
+                mes = 'outubro'
+                break;
+            case '11':
+                mes = 'novembro'
+                break;
+            case '12':
+                mes = 'desembro'
+                break;
+            default:
+                alert('Mês incorreto')
+                break;
+        }
+
+        document.write(`Você nasceu em ${dia} de ${mes} de ${ano}`)
+    </script>
+</body>
+</html>

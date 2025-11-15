@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex58</title>
+</head>
+<body>
+    <script>
+        function fibonanci(n){
+            let seq = [0, 1]
+            for(let i=2; i<n; i++){
+                seq[i] = seq[i-1] + seq[i-2]
+            }
+            return seq
+        }
+
+        let n = parseInt(prompt('N:'))
+        if(!(n<2)){
+            document.write(fibonanci(n))
+        }else{
+            alert('N deve ser maior que 1!')
+        }
+    </script>
+</body>
+</html>

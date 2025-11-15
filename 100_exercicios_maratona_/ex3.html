@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+</head>
+<body>
+    <script>
+        let a = prompt('Digite valor inteiro:')
+        let b = prompt('Digite valor inteiro:')
+        let c = prompt('Digite valor inteiro:')
+
+        if(a+b > c || a+b > b || b+c > a){
+            if(a==b & b==c){
+                document.write('Tringulo Equilatero')
+            }else if(a==b || a==c || b==c){
+                document.write('Tringulo Isósceles')
+            }else{
+                document.write('Tringulo Escaleno')
+            }
+        }else{
+            document.write('Não forma um Tringulo')
+        }
+    </script>
+</body>
+</html>

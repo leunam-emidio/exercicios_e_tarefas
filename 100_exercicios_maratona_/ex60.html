@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex60</title>
+</head>
+<body>
+    <script>
+        let mat = 0
+        let qtdA = 0
+        let qtdR = 0
+
+        do{
+            mat = parseInt(prompt('Matricula:'))
+            let n1 = parseInt(prompt('nota 1:'))
+            let n2 = parseInt(prompt('nota 2:'))
+            let n3 = parseInt(prompt('nota 3:'))
+            let med = ((2*n1)+(3*n2)+(4*n3))/9
+
+            if(med>4 && mat!=9999){
+                qtdA++
+                document.write(`Matricula: ${mat} Media: ${med} APROVADO<br>`)
+            }else{
+                qtdR++
+                document.write(`Matricula: ${mat} Media: ${med} APROVADO<br>`)
+            }
+            
+        }while(mat != 9999)
+
+        document.write(`Qtd aprovados = ${qtdA}<br>`)
+        document.write(`Qtd reprovado = ${qtdR}`)
+    </script>
+</body>
+</html>

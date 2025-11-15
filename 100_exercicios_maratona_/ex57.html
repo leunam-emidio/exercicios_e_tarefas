@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex57</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt('Numero:'))
+
+        let r = (n**0.5).toFixed(0)
+        let q1 = r**2
+        let q2 = (parseInt(r)+1)**2
+
+        if(q1>n){
+            var maior = q1
+        }else{
+            var maior = q2
+        }
+        if(q2<n){
+            var menor = q2
+        }else{
+            var menor = q1
+        }
+
+        document.write(`Maior quadrado ${maior}<br>`)
+        document.write(`Menor quadrado ${menor}`)
+    </script>   
+</body>
+</html>

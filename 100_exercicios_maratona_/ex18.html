@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex18</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt('Digite um número:')) 
+        let inic = parseInt(prompt('Digite um inicio:'))
+        let fim = parseInt(prompt('Digite um fim:'))
+        if(inic<fim){
+            for(let i=inic; i<=fim; i++){
+                document.write(`${n} x ${i} = ${n*i}<br>`)
+            }
+        }else{
+            document.write('Intervalo errado!')
+        }
+    </script>
+</body>
+</html>

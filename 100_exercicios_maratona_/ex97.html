@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex97</title>
+</head>
+<body>
+    <input type="text" id="texto">
+    <input type="button" value="Calcular" onclick="calcular()">
+    <input type="button" value="Limpar" onclick="texto.value = ''">
+    <script>
+        function calcular(){
+            let texto = document.querySelector('#texto')
+            let num = texto.value
+            num = num.split(',')
+            let soma = 0
+            for(v of num){
+                soma += parseInt(v)
+            }
+
+            texto.value = soma
+        }
+    </script>
+</body>
+</html>

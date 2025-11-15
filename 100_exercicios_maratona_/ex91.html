@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex91</title>
+</head>
+<body>
+    <script>
+        let num = parseInt(prompt('Numero inteiro'))
+        let s = 0
+        let b = true
+        for(i= 2; i<num; i++){
+            s = i * (i+1) * (i+2)
+            if(s == num){
+                document.write(`Numero triangular. ${i}x${i+1}x${i+2} = ${num}`)
+                b = false
+            }
+                
+        }
+        if(b){
+            document.write(`${num} não é triangular`)
+        }
+    </script>
+</body>
+</html>

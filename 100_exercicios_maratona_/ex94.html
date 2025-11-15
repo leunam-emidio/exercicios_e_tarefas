@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex94</title>
+</head>
+<body>
+    <script>
+        let vez = parseInt(prompt('Numero inteiro:'))
+
+        for(i = 0; i<vez; i++){
+            let n = Math.floor(Math.random()*10)
+
+            let factorial = 1
+            for(j=1; j<=n; j++){
+                factorial*= j
+            }
+            document.write(`${n} o seu factorial é ${factorial}<br>`)
+        }
+    </script>
+</body>
+</html>

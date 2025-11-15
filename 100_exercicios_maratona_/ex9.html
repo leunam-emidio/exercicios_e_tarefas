@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9</title>
+</head>
+<body>
+    <script>
+        function medirReflexo() {
+            let tempoEspera = Math.floor(Math.random() * 4000) + 1000
+
+            let numeroAleatorio = Math.floor(Math.random() * 10)
+
+            alert("Prepare-se...")
+
+            setTimeout(() => {
+            let inicio = Date.now()
+            let resposta = prompt(`Agora! Digite o número: ${numeroAleatorio}`)
+
+            let fim = Date.now(); 
+            let tempoReacao = (fim - inicio) / 1000
+
+            if (parseInt(resposta) === numeroAleatorio) {
+                alert(`Correto! Seu tempo de reação foi ${tempoReacao.toFixed(2)} segundos.`)
+            } else {
+                alert(`Número errado! Seu tempo de reação foi ${tempoReacao.toFixed(2)} segundos.`)
+            }
+        }, tempoEspera)
+        }
+
+        medirReflexo()
+
+    </script>
+</body>
+</html>

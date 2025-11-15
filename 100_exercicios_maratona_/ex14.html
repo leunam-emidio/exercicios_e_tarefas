@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex14</title>
+</head>
+<body>
+    <script>
+        let palavra1 = prompt('Digite uma palavra:')
+        let palavra2 = prompt('Digite uma palavra:')
+
+        if(palavra1 == palavra2){
+            document('As palavras são iguas')
+        }else{
+            if(palavra1 > palavra2){
+                document.write(`${palavra1} é maior que ${palavra2} <br>`)
+            }else{
+                document.write(`${palavra2} é maior que ${palavra1} <br>`)
+            }
+        }
+
+        if(palavra1.includes(palavra2)){
+            document.write(`${palavra2} é uma substring de ${palavra1}`)
+        }else{
+            document.write(`${palavra2} não é uma substring de ${palavra1}`)
+        }
+    </script>
+</body>
+</html>

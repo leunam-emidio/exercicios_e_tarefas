@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex42</title>
+</head>
+<body>
+    <script>
+        let soma = 0
+        let qtd = 0
+        let n = 0
+        while(n!= 9999){
+            n = Number(prompt('Digite um valor'))
+            soma+=n
+            qtd++
+        }
+        document.write(`A soma é ${soma} <br>`)
+        document.write(`A media é ${(soma/qtd).toFixed(2)}`)
+    </script>
+</body>
+</html>

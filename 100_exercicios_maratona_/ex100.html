@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex100</title>
+</head>
+<body>
+    <textarea name="" id="texto"></textarea>
+    <input type="button" value="Remover" onclick="remover()">
+    <script>
+        function remover() {
+            let texto = document.querySelector('#texto')
+            let ntexto = texto.value
+            ntexto = ntexto.split(' ')
+            ntexto = ntexto.join('')
+    
+            texto.value = ntexto
+        }
+    </script>
+</body>
+</html>

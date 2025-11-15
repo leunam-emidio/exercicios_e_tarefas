@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex16</title>
+</head>
+<body>
+    <script>
+        let popA = 80000    
+        let popB = 200000
+        let taxaA = 0.03
+        let taxaB = 0.015
+        let anos = 0
+
+        while (popA < popB) {
+            popA += popA * taxaA; // cresce 3%
+            popB += popB * taxaB; // cresce 1.5%
+            anos++
+        }
+
+        document.write(`A população do país A ultrapassará ou igualará a de B em ${anos} anos. <br>`)
+        document.write(`População final de A: ${Math.round(popA)} <br>`)
+        document.write(`População final de B: ${Math.round(popB)} `)
+    </script>
+</body>
+</html>

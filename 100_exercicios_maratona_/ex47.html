@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex47</title>
+</head>
+<body>
+    <script>
+        let qB = 0
+        let qM = 0
+        let qA = 0
+        let i = 0
+        while(i<10){
+            let nVez = parseInt(prompt('Digite o numero de vezes: '))
+            if(nVez<10){
+                qB++
+            }else if(nVez > 9 && nVez <16){
+                qM++
+            }else{
+                qA++
+            }
+
+            i++
+        }
+        document.write(`a) ${((qB*100)/10)}% <br>`)
+        document.write(`b) ${((qM*100)/10)}%<br>`)
+        document.write(`a) ${((qA*100)/10)}%`)
+    </script>
+</body>
+</html>

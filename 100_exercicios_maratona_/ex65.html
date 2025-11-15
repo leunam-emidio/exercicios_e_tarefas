@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex65</title>
+</head>
+<body>
+    <script>
+        let frase = prompt('Frase:').split('')
+        frase.forEach((v, i) => {
+            frase[i] = v == ' '? v: '*'
+        });
+        document.write(frase.join(''))
+    </script>
+</body>
+</html>

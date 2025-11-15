@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex25</title>
+</head>
+<body>
+    <script>
+        let nums = []
+        let qtd = 0
+        let qtdP = 0
+        let qtdN = 0
+        let contnua = true
+        let soma = 0
+        while(contnua){
+            let n = Number(prompt('Digite o valor'))
+            nums.push(n)
+            soma += n
+            qtd++
+
+            if(n>0){
+                qtdP++
+            }else{
+                qtdN++
+            }
+
+            res = prompt('Digite n para parar e qualquer letra para continuar')
+            res.toLowerCase()
+            if(res == 'n'){
+                contnua = false
+            }
+        }
+        console.log(nums)
+        document.write(`A média aritmetica é ${soma/qtd} <br>`)
+        document.write(`A qtd de positivos é ${qtdP}<br>`)
+        document.write(`A qtd de negativos é ${qtdN}<br>`)
+        document.write(`O percentual de positivos é ${((qtdP*100)/qtd).toFixed(2)}%<br>`)
+        document.write(`O percentual de negativos é ${((qtdN*100)/qtd).toFixed(2)}%`)
+    </script>
+</body>
+</html>

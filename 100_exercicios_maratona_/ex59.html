@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex59</title>
+</head>
+<body>
+    <script>
+        let idade = 0
+        let maior = 0
+        let qtdF = 0
+        let qtdOC = 0
+
+        do{
+            idade = parseInt(prompt('Idade:'))
+            let sexo = prompt('sexo (M/F):')
+            let olhos = prompt('olhos (azuis, verdes ou castanhos):')
+            let cabelo = prompt('Cabelos (louros, castanhos, pretos):')
+
+            if(maior<idade && idade>0){
+                maior = idade
+            }
+            if(sexo = 'F' && idade > 17 && idade < 36){
+                qtdF++
+            }
+
+            olhos.toLowerCase()
+            if(olhos == 'castanhos' && cabelo == 'louros' && idade>0){
+                qtdOC++
+            }
+        }while(idade != -1)
+
+        document.write(`Maior idade = ${maior}<br>`)
+        document.write(`Qtd F idade 18-35 = ${qtdF}<br>`)
+        document.write(`Qtd olhos e cabelos = ${qtdOC}`)
+    </script>
+</body>
+</html>

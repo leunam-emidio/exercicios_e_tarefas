@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex61</title>
+</head>
+<body>
+    <script>
+       let andares = parseInt(prompt('N andares:'))
+       let elevador = 0
+       for(let a = 0; a<=andares; a++){
+            let entrada = parseInt(prompt(`N pessoas que entraram no ${a}º andar:`))
+            let saida = parseInt(prompt('N pessoas que sairam:'))
+
+            if(elevador == 0){
+                elevador += entrada 
+            }else{
+                elevador = elevador - saida + entrada
+            }
+
+            console.log(elevador)
+            if(elevador>15){
+                console.log('oi')
+                let s = elevador-15
+                alert(`EXCESSO DE PASSAGEIROS. DEVEM SAIR ${s}`)
+                elevador -= s
+            }
+
+            if(a == andares){
+                document.write(`Irão descer ${elevador}`)
+            }
+       }
+    </script>
+</body>
+</html>

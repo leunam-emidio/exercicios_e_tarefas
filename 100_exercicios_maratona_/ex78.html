@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex78</title>
+</head>
+<body>
+    <script>
+        function entradaD(){
+            let frase = prompt('Frase:')
+            
+            frase = substituirE(frase)
+
+            return frase
+        }
+
+        function substituirE(frase){
+            frase = frase.split(' ')
+            frase = frase.join('#')
+            
+            return frase
+        }
+
+        
+        document.write(`${entradaD()}`)
+    </script>
+</body>
+</html>

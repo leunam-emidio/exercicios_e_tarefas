@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex33</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt("Quantas vezes deseja executar?"))
+
+        for (let i = 1; i <= 10; i++) {
+            let A = parseInt(prompt(`(${i}/10) Digite o valor de A:`))
+            let B = parseInt(prompt(`(${i}/10) Digite o valor de B:`))
+            let modulo = A % B
+            document.write(`O módulo de ${A} por ${B} é ${modulo}`)
+        }
+
+        for (let i = 1; i <= 0; i++) {
+            let A = parseInt(prompt(`(${i}/10) Digite o valor de A:`))
+            let B = parseInt(prompt(`(${i}/10) Digite o valor de B:`))
+            let modulo = A % B
+            document.write(`O módulo de ${A} por ${B} é ${modulo}`)
+        }
+
+        for (let i = 1; i <= 10; i++) {
+            for (let j = 1; j <= 10; j++){
+                let A = parseInt(prompt(`(${j}/10) Digite o valor de A:`))
+                let B = parseInt(prompt(`(${j}/10) Digite o valor de B:`))
+                let modulo = A % B
+                document.write(`O módulo de ${A} por ${B} é ${modulo}`)
+            }
+        }
+
+        let i = 1
+        while (i<=n) {
+            let A = parseInt(prompt(`(${i}/10) Digite o valor de A:`))
+            let B = parseInt(prompt(`(${i}/10) Digite o valor de B:`))
+            let modulo = A % B
+            document.write(`O módulo de ${A} por ${B} é ${modulo}`)
+            i++
+        }
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex26</title>
+</head>
+<body>
+    <script>
+        let codigos = []
+        let sBruto = []
+        let sLiquido = []
+        let sLiqM = 0
+        let sLiqF = 0
+        let qF = 0
+        let qM = 0
+        for(;;){
+            let codigo = Number(prompt('Digite o codigo:'))
+            if(codigo == 9999){
+                break
+            }
+            let sexo = prompt('Digite o sexo:')
+            let nAulas = Number(prompt('Digite o numero de aulas:'))
+            
+            codigos.push(codigo)
+            let sB = nAulas*30
+            sBruto.push(sB)
+            sexo.toLocaleLowerCase()
+            if(sexo == 'm' || sexo == 'masculino'){
+                let sL= sB*0.1
+                sLiquido.push(sL)
+                sLiqM += sL
+                qM++
+            }else{
+                let sL= sB*0.05
+                sLiquido.push(sL)
+                sLiqF += sL
+                qF++
+            }
+        }
+
+        for(i= 0; i<codigos.length; i++){
+            document.write(`${codigos[i]} tem o salario bruto de ${sBruto[i]} e o liquido de ${sLiquido[i]} <br>`)
+        }
+
+        document.write(`A média dos salarios liquido dos professores é ${sLiqM/qM}<br>`)
+        document.write(`A média dos salarios liquido das professoras é ${sLiqF/qF}`)
+    </script>
+</body>
+</html>

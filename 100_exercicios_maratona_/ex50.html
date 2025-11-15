@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex50</title>
+</head>
+<body>
+    <script>
+        /*
+        Considere que, para cada um dos hotéis fazenda da região, se tenha registrado o nome 
+        do hotel, a sua distância do centro da cidade, o número médio de visitantes no último 
+        feriado e o tipo de acesso ao hotel (0 – acesso não asfaltado; 1 – acesso asfaltado).
+        
+        Construa um algoritmo que forneça: a) O número de hoteis que distam mais de 15km do 
+        centro; b) A quantidade média de visitantes no último feriado, nos hoteis com acesso não 
+        asfaltado; c) O nome e a distância do centro em Km, de todos os hoteis de acesso asfaltado 
+        que tiveram menos de 1.000 visitantes.
+        */
+
+        let hDist15 = 0
+        let sVis = 0
+        let q = 0
+        
+        for(let i = 0; i<1; i++){
+            let nHotel = prompt('Nome do hotel:')
+            let dist = Number(prompt('A distância:'))
+            let nVis = parseInt(prompt('Numero de visitantes:'))
+            let tAcesso = prompt('Tipo de acesso: 0 ou 1')
+
+            if(dist>15){
+                hDist15++
+            }
+            if(tAcesso == '0'){
+                sVis+=nVis
+                q++
+            }
+
+            if(tAcesso == '1' && nVis<1000){
+                document.write(`Nome: ${nHotel} Distancia: ${dist}<br>`)
+            }
+        }
+
+        document.write(`O número de hoteis que distam mais de 15km do centro é ${hDist15}<br>`)
+        document.write(`A quantidade média de visitantes no último feriado é ${(sVis/q).toFixed(2)}`)
+    </script>
+</body>
+</html>

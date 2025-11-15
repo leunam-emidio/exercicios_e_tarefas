@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex56</title>
+</head>
+<body>
+    <script>
+        let med = 0
+        let qtd = 0
+        let maior = 0
+        let menor = 1000
+        let qtdM = 0
+        
+        let idade = 0
+        do{
+            idade = parseInt(prompt('Idade:'))
+            let sexo = prompt('Sexo (M/F):')
+            let salario = Number(prompt('Salario:'))
+            
+            if(idade>0){
+                med += salario
+                qtd++
+            }
+
+            if(maior<idade && idade > 0){
+                maior = idade
+            }
+            if(menor>idade && idade > 0){
+                menor = idade
+            }
+            
+            sexo.toLocaleUpperCase()
+            if(salario <= 100 && sexo == 'F'){
+                qtdM++
+            }
+            console.log(idade)
+        }while(idade > 0)
+
+        document.write(`Media = ${med/qtd}<br>`)
+        document.write(`Maior idade = ${maior}<br>`)
+        document.write(`Menor idade = ${menor}<br>`)
+        document.write(`Qtd de mulheres que ganham até 100 = ${qtdM}`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex12</title>
+</head>
+<body>
+    <script>
+        let num = prompt('Digite 10 valores separados por espaço:').split(' ')
+        let n = Number(prompt('Digite um valor:'))
+        
+        num.forEach((v, i) => {
+            num[i] = Number(v)
+        }, 0)
+
+        let t = 0
+        for(let v of num){
+            if(n > v){
+                t++
+            }
+        }
+        document.write(`${t} numero(s) é/são inferiores a ${n}`)
+        console.log(num)
+    </script>
+</body>
+</html>

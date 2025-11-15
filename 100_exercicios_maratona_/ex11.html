@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex11</title>
+</head>
+<body>
+    <script>
+        for(let f = 0; f<1000000; f++){
+            let num1 = f
+            let sd1 = 0
+            for(let i = 1; i<num1; i++){
+                if(num1%i==0){
+                    sd1+=i
+                }
+            }
+            for(let i = 1; i<1000000; i++){
+                if(sd1==i){
+                    let num2 = i
+                    let sd2 = 0
+                    for(let j = 1; j<num2; j++){
+                        if(num2%j==0){
+                            sd2+=j
+                        }
+                    }
+                    if(sd2 == num1 && num1 != num2 && num2>num1){
+                        document.write(`${num1} e ${num2} são amigos <br>`)
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

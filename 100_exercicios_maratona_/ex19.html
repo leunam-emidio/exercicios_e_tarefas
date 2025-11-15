@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex19</title>
+</head>
+<body>
+    <script>
+        let string = prompt('Digite uma string:')
+
+        document.write(`O número de caracteres é ${string.length}<br>`)
+        document.write(`A string em maiuscula é ${string.toUpperCase()}<br>`)
+        document.write(`A string em minuscula é ${string.toLowerCase()}<br>`)
+
+        let v = 0
+        for(c of string){
+            if(c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'){
+                v++
+            }
+        }
+        document.write(`A string tem ${v} vogais<br>`)
+
+        string = string.toUpperCase()
+        if (string.startsWith('UNI')) {
+            document.write(`A string começa com \"UNI\"<br>`)
+        }
+
+        string = string.toUpperCase()
+        if (string.endsWith('RIO')) {
+            document.write(`A string termina com \"RIO\" <br>`)
+        }
+
+        if(string.length > 9){
+            document.write(`A substring de 0 a 9 é ${string.slice(0, 9)} <br>`)
+        }
+
+        let inverso = []
+        for(let c in string){
+            inverso.push(string.at(-c-1))
+        }
+        console.log(inverso)
+        inverso = inverso.join('')
+        
+        console.log(inverso)
+        if(string == inverso){
+            document.write(`${string} é palindromo`)
+        }
+    </script>
+</body>
+</html>

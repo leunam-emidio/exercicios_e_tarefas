@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex13</title>
+</head>
+<body>
+    <script>
+        let nome = prompt('Digite o nome:').split(' ')
+
+        nome.forEach((v, i) =>{
+            nome[i] = (v.length < 3) ? v : v[0].toUpperCase()+'.'
+        })
+
+        let nomeAbr = nome.join(' ')
+        document.write(nomeAbr)
+    </script>
+</body>
+</html>

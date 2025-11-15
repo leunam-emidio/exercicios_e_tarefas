@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex72</title>
+</head>
+<body>
+    <script>
+        let numero = parseInt(prompt("Digite um número entre 20 e 99:"))
+
+        if (numero < 20 || numero > 99) {
+            alert("Número inválido!")
+        } else {
+            let dezena = Math.floor(numero / 10)
+            let unidade = numero % 10
+
+            let dezenas = [
+                "", "", "vinte", "trinta", "quarenta",
+                "cinquenta", "sessenta", "setenta", "oitenta", "noventa"
+            ]
+
+            let unidades = [
+                "", "um", "dois", "três", "quatro",
+                "cinco", "seis", "sete", "oito", "nove"
+            ]
+
+            let extenso = dezenas[dezena]
+
+            if (unidade !== 0) {
+                extenso += " e " + unidades[unidade]
+            }
+
+            document.write(extenso)
+        }
+
+    </script>
+</body>
+</html>

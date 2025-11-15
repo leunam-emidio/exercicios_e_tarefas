@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex71</title>
+</head>
+<body>
+    <script>
+        let texto = prompt('Texto:')
+        let txt = ''
+        for(i = 1; i<=texto.length; i++){
+            txt+= texto.at(-i)
+        }
+        txt = txt.split(' ')
+        txt = txt.join('')
+
+        let nTxt = texto.split(' ')
+        nTxt = nTxt.join('')
+
+        if(nTxt == txt){
+            document.write(`${texto} = palindromo`)
+        }else{
+            document.write(`${texto} = não é palindromo`)
+        }
+    </script>
+</body>
+</html>

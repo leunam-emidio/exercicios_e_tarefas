@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex44</title>
+</head>
+<body>
+    <script>
+        let n1 = parseInt(prompt('Digite um valor'))
+        let n2 = parseInt(prompt('Digite um valor'))
+        let quoc = 0
+        
+        let soma = 0
+        let dif = n1
+        while(dif>0 && dif>=n2){
+            dif -= n2
+            soma += n2
+            quoc++
+        }
+        let resto = n1 - soma
+        document.write(`${quoc} ${resto}`)
+        console.log(soma, dif)
+    </script>
+</body>
+</html>

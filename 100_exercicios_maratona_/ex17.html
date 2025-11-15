@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex17</title>
+</head>
+<body>
+    <script>
+        let n = parseInt(prompt('Digite um valor inteiro:'))
+        let sd = 0
+        for(let i=1; i<=n; i++){
+            let d = 0
+            for(let j = 1; j<=i; j++){
+                if(i%j == 0){
+                    d++
+                    sd++
+                }
+            }
+            if(d==2){
+                document.write(`${i} é primo <br>`)
+            }
+        }
+        document.write(`O programa executou ${sd} divisões para encontrar os numeros primos`)
+    </script>
+</body>
+</html>

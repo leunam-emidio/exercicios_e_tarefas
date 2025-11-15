@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex6</title>
+</head>
+<body>
+    <script>
+        let num = prompt('Digite um valor')
+
+        function soma(num){
+            let s = 0
+            for(let n of num){
+                s += Number(n)
+            }
+            return s
+        }
+
+        document.write('A soma é '+soma(num))
+    </script>
+</body>
+</html>

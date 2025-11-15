@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex10</title>
+</head>
+<body>
+    <script>
+        let numeros = []
+        let a = 0
+        for(;;){
+            let num = Number(prompt('Digite um valor'))
+
+            if(num < 0){
+                break
+            }else{
+                numeros.push(num)
+                a++
+            }
+        }
+
+        soma = numeros.reduce((ac, va) => { return ac + va }, 0)
+        document.write('Média é '+soma/a)
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex80</title>
+</head>
+<body>
+    <script>
+        let figura = prompt("Digite L para losango ou T para triângulo:").toUpperCase();
+
+        let n = parseInt(prompt("Digite o tamanho (número de linhas):"));
+
+        if (isNaN(n) || n <= 0) {
+            document.write("Tamanho inválido!");
+        } else if (figura === "T") {
+            
+            for (let i = 1; i <= n; i++) {
+                let qtd = 2 * i - 1;
+                document.write("%".repeat(qtd)+'<br>');
+            }
+
+        } else if (figura === "L") {
+            for (let i = 1; i <= n; i++) {
+                let qtd = 2 * i - 1;
+                document.write("%".repeat(qtd)+'<br>');
+            }
+
+            for (let i = n - 1; i >= 1; i--) {
+                let qtd = 2 * i - 1;
+                document.write("%".repeat(qtd)+'<br>');
+            }
+
+        } else {
+            document.write("Opção inválida!");
+        }
+    </script>
+</body>
+</html>
